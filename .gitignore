@@ -29,17 +29,13 @@ wheels/
 # pyenv
 .python-version
 
-# TensorFlow
-*.h5
-*.hdf5
+# TensorFlow checkpoints (but keep .h5 model files)
 *.pb
 checkpoint
 *.ckpt
 *.ckpt.*
 
-# Models
-models/*.h5
-models/*.hdf5
+# Models checkpoints only
 models/checkpoints/
 
 # Output

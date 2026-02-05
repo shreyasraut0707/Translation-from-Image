@@ -5,6 +5,7 @@ A machine learning based application that extracts English text from images and 
 ## Project Overview
 
 This project implements an OCR (Optical Character Recognition) system combined with language translation. It can:
+
 - Extract text from images using EasyOCR and Tesseract
 - Process video files to extract text from frames
 - Translate extracted English text to Hindi
@@ -27,35 +28,58 @@ This project implements an OCR (Optical Character Recognition) system combined w
 
 ## Installation and Execution
 
-### Step 1: Install Python Dependencies
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/shreyasraut0707/Translation-from-Image.git
+cd Translation-from-Image
+```
+
+### Step 2: Create Virtual Environment (Recommended)
+
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 2: Install Tesseract OCR
+### Step 4: Install Tesseract OCR
 
 For Windows:
+
 - Download from: https://github.com/UB-Mannheim/tesseract/wiki
 - Install and add to system PATH
 
 For Linux:
+
 ```bash
 sudo apt-get install tesseract-ocr
 ```
 
 For macOS:
+
 ```bash
 brew install tesseract
 ```
 
-### Step 3: Run the Application
+### Step 5: Run the Application
 
 ```bash
 python app.py
 ```
 
 This will open the GUI window where you can:
+
 1. Click "Choose File" to select an image or video
 2. Click "Extract" to extract text from the file
 3. Click "Translate" to translate the extracted text to Hindi
@@ -94,15 +118,33 @@ Translation from Image/
 - Tkinter - GUI framework
 - IIIT5K Dataset - for training the CRNN model
 
-## Trained Model
+## Custom Trained Model (Optional)
+
+The application works out-of-the-box using EasyOCR and TrOCR. However, you can optionally train a custom CRNN model:
+
+### Training the Custom Model
+
+1. Download the IIIT5K dataset from: http://cvit.iiit.ac.in/projects/SceneTextUnderstanding/IIIT5K.html
+2. Extract to `IIIT5K-Word_V3.0/` folder in the project root
+3. Run the training script:
+
+```bash
+python src/models/train.py --epochs 50 --batch_size 32
+```
+
+The trained model will be saved to `models/` directory.
+
+### Model Training Results
 
 The CRNN model was trained on the IIIT5K dataset:
+
 - Training images: 2000
 - Test images: 3000
 - Training accuracy: 76.93%
 - Validation accuracy: 75.72%
 
 To retrain the model:
+
 ```bash
 python src/models/train.py --epochs 10 --batch_size 16
 ```
@@ -110,14 +152,17 @@ python src/models/train.py --epochs 10 --batch_size 16
 ## Troubleshooting
 
 Tesseract not found error:
+
 - Verify Tesseract is installed correctly
 - Add Tesseract path to system PATH variable
 
 Translation not working:
+
 - Check internet connection
 - Verify the text is in English
 
 No text detected:
+
 - Ensure image has clear, readable text
 - Try with higher resolution images
 
