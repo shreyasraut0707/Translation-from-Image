@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# TensorFlow
+*.h5
+*.hdf5
+*.pb
+checkpoint
+*.ckpt
+*.ckpt.*
+
+# Models
+models/*.h5
+models/*.hdf5
+models/checkpoints/
+
+# Output
+output/*.png
+output/*.jpg
+output/*.txt
+output/logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Video files (too large)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Large datasets (too large for GitHub)
+IIIT5K-Word_V3.0/
